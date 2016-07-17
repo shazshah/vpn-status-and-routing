@@ -2,7 +2,7 @@
 #
 #Date:      16/07/2016
 #
-#Purpose:   If a client machine is connect to vpn a client and you attempt to connect to that
+#Purpose:   If a client machine is connected to vpn a client and you attempt to connect to that
 #           client machine via your own VPN Server (i.e. through VPN server on a router)
 #           the client machine will be inaccesible. This script will apply routing tables on the
 #           client machine it is run on so that the client machine is aware of the router and 
@@ -88,14 +88,12 @@ class Write_IP_Tables(object):
                 return "Already run successfully, not running again!"
 
         else:
-            log_file = Text_File_Modifier()
             log_file.write_file("Unable to run IP tables.", log_file_path)
             return "Unable to run IP tables."
 
 #-----MAIN-----
 
 #initialise class objects
-#get_vpn_status = Get_VPN_Status()
 write_ip_tables = Write_IP_Tables()
 
 #begin attempting to write ip tables
